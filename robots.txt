@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tanjona-tokiniaina.netlify.app/sitemap.xml
