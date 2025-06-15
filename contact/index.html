@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me!</title>
+<link rel="stylesheet" href="style.css">
+
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q47HY7CVGP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q47HY7CVGP');
+  </script>
+  
+  <!-- Meta tags SEO -->
+  <title>Maminirina Balsama - Expert Digital & IA | Portfolio & Blog</title>
+  <meta name="description" content="Découvrez l'univers de Maminirina Balsama : expert en marketing digital, IA, développement web. Projets innovants, blog tech et conseils personnalisés.">
+  <meta name="keywords" content="Maminirina Balsama, marketing digital, IA, développement web, SEO, Python, consultation digitale">
+  <meta name="author" content="Maminirina Balsama">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Maminirina Balsama - Expert Digital & IA">
+  <meta property="og:description" content="Expert en marketing digital, IA et développement web. Découvrez mes projets et conseils.">
+  <meta property="og:image" content="https://balsama.netlify.app/images/site.jpg">
+  <meta property="og:url" content="https://balsama.netlify.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maminirina Balsama - Expert Digital & IA">
+  <meta name="twitter:description" content="Expert en marketing digital, IA et développement web. Projets innovants et conseils personnalisés.">
+  <meta name="twitter:image" content="https://balsama.netlify.app/images/site.jpg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    
+    <div class="container">
+        <h1>Contact Me!</h1>
+        
+        <div class="form-container">
+            <form id="contactForm">
+                <div class="form-row">
+
+
+
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="name" required>
+                        <div class="error-message">Name is required</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Address" required>
+                        <div class="error-message">Email Address can't be blank</div>
+
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="+12" required>
+                        <div class="error-message">Phone number is required</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Test Subject" required>
+                        <div class="error-message">Subject is required</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <textarea id="message" placeholder="This is a test message" required></textarea>
+                        <div class="error-message">Message is required</div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        // Form validation and submission
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input, textarea');
+
+        // Real-time validation
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateField);
+            input.addEventListener('input', clearError);
+        });
+
+        function validateField(e) {
+            const field = e.target;
+            const formGroup = field.closest('.form-group');
+            const errorMsg = formGroup.querySelector('.error-message');
+            
+            if (!field.value.trim()) {
+                formGroup.classList.add('error');
+                errorMsg.classList.add('show');
+                return false;
+            } else if (field.type === 'email' && !isValidEmail(field.value)) {
+                formGroup.classList.add('error');
+                errorMsg.textContent = 'Please enter a valid email address';
+                errorMsg.classList.add('show');
+                return false;
+            } else {
+                formGroup.classList.remove('error');
+                errorMsg.classList.remove('show');
+                return true;
+            }
+        }
+
+        function clearError(e) {
+            const field = e.target;
+            const formGroup = field.closest('.form-group');
+            const errorMsg = formGroup.querySelector('.error-message');
+            
+            if (field.value.trim()) {
+                formGroup.classList.remove('error');
+                errorMsg.classList.remove('show');
+            }
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField({target: input})) {
+                    isValid = false;
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                const btn = form.querySelector('.send-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Sending...';
+                btn.style.background = 'linear-gradient(45deg, #00ff88, #00d4ff)';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Message Sent!';
+                    btn.style.background = 'linear-gradient(45deg, #00ff88, #32cd32)';
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = 'linear-gradient(45deg, #00d4ff, #00ff88)';
+                        form.reset();
+                    }, 2000);
+                }, 1500);
+            }
+        });
+
+        // Update time display
+        function updateTime() {
+            const now = new Date();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('timeDisplay').textContent = `${minutes}:${seconds}`;
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // Add some interactive effects
+        document.addEventListener('mousemove', function(e) {
+            const cursor = document.createElement('div');
+            cursor.style.position = 'fixed';
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.width = '4px';
+            cursor.style.height = '4px';
+            cursor.style.background = 'rgba(0, 212, 255, 0.6)';
+            cursor.style.borderRadius = '50%';
+            cursor.style.pointerEvents = 'none';
+            cursor.style.zIndex = '9999';
+            cursor.style.animation = 'fade 0.8s ease-out forwards';
+            
+            document.body.appendChild(cursor);
+            
+            setTimeout(() => {
+                cursor.remove();
+            }, 800);
+        });
+
+        // Add fade animation for cursor trail
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
