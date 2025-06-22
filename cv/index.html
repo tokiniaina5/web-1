@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
+  <title>3D Portfolio</title>
   <link rel="stylesheet" href="style.css">
-<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+ <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
 <body>
-
-      <div class="wrapper">
-   <div class="cover cover-left"></div>
-  <div class=" cover cover-right turn">
-  </div>
-
   <div class="book">
-    <div class="book-page page-left">
-      <div class="profile-page">
-        <img src="/TANJONA.PNG" alt="">
-        <h1>tanjona tokiniaina</h1>
-        <h3>web developer</h3>
-        <div class="social-madia">
-          <a href="#"><span>&#128522;</span></a>
-           <a href="#"></a>
-            <a href="#"></a> 
-            <a href="#"></a>
-           
+    <div class="page front">
+      <div class="content">
+        <img src="./b3f60ee6-36ca-4b8d-adbe-c5842e696dda.jpeg" alt="Profile" class="profile-img" />
+<h1>RASOLOFONIRAINY Tokiniaina Tanjona</h1>
+        <h2>web developer</h2>
+       
+
+        <div class="social-media">
+            <a href="#"> <box-icon name='facebook-square' type='logo' ></box-icon></a>
+          
+             <a href="#"></a>
+              <a href="#"></a>
+               <a href="#"></a>
+
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus reprehenderit laboriosam ipsum voluptas autem esse soluta atque, provident accusantium, fugit praesentium et. Sint, quaerat eaque. Optio ipsam quos veritatis tempore?</p>
         </div>
-         
-            <p>hi,I'm tanjona a web developer . Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit omnis inventore totam perferendis? Fugit inventore provident eum autem excepturi, aspernatur necessitatibus iusto tempore aut alias officiis consequatur facilis iure harum!</p>
-            <div class="btn-box">
-              <a href="#" class="btn">document</a>
-              <a href="#" class="btn contac-me">contact me</a>
+
+        
+      </div>
+    </div>
+    <div class="page middle">
+        <!-- page 1 -->
+      <div class="content">
+        <h3>Work Experience</h3>
+        <div class="workeduc-bob">
+            <div class="workeduc-content">
+                <span class="year"> <box-icon name='calendar'></box-icon>2012-2013</span>
+                <h3>web developer company</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae dolores officiis sed rerum saepe porro labore molestiae qui, recusandae quisquam? Libero, officia. Maxime dolorum ducimus accusantium soluta molestias vel?</p>
             </div>
+
+             <div class="workeduc-content">
+                <span class="year"> <box-icon name='calendar'></box-icon>2012-2013</span>
+                <h3>web developer company</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae dolores officiis sed rerum saepe porro labore molestiae qui, recusandae quisquam? Libero, officia. Maxime dolorum ducimus accusantium soluta molestias vel?</p>
+            </div>
+
+            
+        </div>
+        <ul>
+          <li><strong>Web Developer</strong> - Company 1</li>
+          <li><strong>Frontend Dev</strong> - Company 2</li>
+        </ul>
       </div>
     </div>
 
+    <div class="page back">
+      <div class="content">
+        <h3>Projects & Skills</h3>
+        <p>Creative Design, SEO, JavaScript, etc.</p>
+      </div>
+    </div>
+  </div>
 
-<!-- page 2 -->
- 
+  <button id="next">Next Page</button>
+  <button id="precedent">pre</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
