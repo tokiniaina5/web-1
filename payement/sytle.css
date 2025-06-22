@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: red;
+}
+.bar{
+width: 0;
+top: 0;
+}
+.bar h1{
+    color: blue;
+    width: 24px;
+
+}
