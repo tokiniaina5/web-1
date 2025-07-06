@@ -1,14 +1,16 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MODE PAYEMENT</title>
+    <title>TOKINIAINA TANJONA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    
-
-    
+        <link rel="shortcut icon" href="./logos.jpeg">
+         <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+         
+ 
          <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENVV62X7CL"></script>
 <script>
@@ -26,23 +28,23 @@
 
 
   <!-- Meta tags SEO -->
-  <title>RASOLOFONIRAINY Tokiniaina Tanjona - Expert informatique numerique | website,css,javascript|  informatique analogique|proteus,  pic 16F877A,PicKit| mechanic auto...  | </title>
+  <title>RASOLOFONIRAINY Tokiniaina Tanjona - Expert informatique numerique |marketing digital, IA, développement web |  informatique analogique|proteus,pic 16F877A, PicKit| mechanic auto...  | </title>
   <meta name="description" content="Découvrez l'univers de tokiniaina tanjona : expert en marketing digital, IA, développement web. Projets innovants, blog tech et conseils personnalisés.">
   <meta name="keywords" content="tanjona, marketing digital, IA, développement web, SEO, consultation digitale">
   <meta name="author" content="tanjona">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="tanjona-tokiniaina - Expert Digital & IA">
+  <meta property="og:title" content="RASOLOFONIRAINY Tokiniaina Tanjona - Expert informatique numerique |web development, IA, web Design |  informatique analogique|proteus, pic 16F877A,PicKit| mechanic auto...  | ">
   <meta property="og:description" content="Expert en marketing digital, IA et développement web. Découvrez mes projets et conseils.">
-  <meta property="og:image" content="https://tanjona-tokiniaina.netlify.app/images./logos.jpg">
-  <meta property="og:url" content="https://tanjona-tokiniaina.netlify.app">
+  <meta property="og:image" content="https://tokiniaina-tanjona.netlify.app/images./logos.jpg">
+  <meta property="og:url" content="https://tokiniaina-tanjona.netlify.app">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="tanjona-tokiniaina - Expert Digital & IA">
   <meta name="twitter:description" content="Expert en marketing digital, IA et développement web. Projets innovants et conseils personnalisés.">
-  <meta name="twitter:image" content="https://tanjona-tokiniaina.netlify.app/images/site.jpg">
+  <meta name="twitter:image" content="https://tokiniaina-tanjona.netlify.app/images/site.jpg">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,29 +67,621 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gtag('config', '	GTM-TF7KT89H');
   </script>
 
+
 </head>
 <body>
+    <style>
+              @import url('https://fonts.googleapis.com/css?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-  <!-- Google Tag Manager (noscript) -->
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins','sans-serif';
+    text-decoration: none;
+border: none;
+outline: none;
+
+}  
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a0033, #2d1b4e, #4a2c7a);
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+
+        /* Three.js Canvas */
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 2rem;
+            background: rgba(51, 0, 24, 0.9);
+        }
+
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color:rebeccapurple;
+        }
+
+        .portfolio-grid {
+          
+            grid-template-columns: repeat( minmax(300px, 1fr));
+            gap: 4rem;
+        }
+
+        .portfolio-card {
+            background: rgba(74, 44, 122, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(64, 224, 208, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(64, 224, 208, 0.2);
+            border-color: #40E0D0;
+        }
+
+        .portfolio-card h3 {
+            color: #40E0D0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .portfolio-card p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+            .tech-stack a{
+              
+            width: 100%;
+            height: 50px;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #40E0D0;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        
+        }
+
+        .tech-stack  a:hover {
+            background: rgb(179, 44, 44);
+            color: #1a0033;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.3);
+        }  
+        
+
+        .tech-tag {
+            background: rgba(64, 224, 208, 0.2);
+            color: #40E0D0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(64, 224, 208, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 0, 51, 0.95);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text .highlight {
+                font-size: 1.8rem;
+            }
+
+            .image-container {
+                width: 300px;
+                height: 400px;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 320px;
+            }
+          
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text .highlight {
+                font-size: 1.5rem;
+            }
+
+            .image-container {
+                width: 250px;
+                height: 350px;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 280px;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+         
+        .portfolio-container .features-grid  a{
+           font-size: 2rem;
+            color: #ffffff;
+            text-decoration: none;
+             justify-content: center;
+             text-align: center;
+            position: relative;
+             background:greenyellow;
+            border-radius: 25px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+
+         }
+
+
+        .portfolio-container .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+           
+        }
+
+        /* Footer */
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease-out 1.3s forwards;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border: 2px solid brown;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:pink;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background:pink;
+            color: #1a0033;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.3);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        
+        .footer-content a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-content a:hover {
+            opacity: 1;
+            color: #4facfe;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNNSL7R5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    
-    <header>
 
+    <canvas id="three-canvas"></canvas> 
+    
+
+ <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <h2>MODE DE PAYEMENT</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3> M/VOLA </h3>
+                    <p></p>
+                    <div class="tech-stack">
+                       
+                            <img src="./MVOLA.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3> ORANGE MONEY</h3>
+                    <p></p>
+                    <div class="tech-stack">
+                      <img src="./images orange.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>CARD</h3>
+                    <p></p>
+                    <div class="tech-stack">
+                       <img src="./vitrophanie-CB-1.jpg" alt="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="features-grid ">
+                
+            <a href="/index.html">page accueil</a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+     <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+
+
+            
+             
+
+            <div class="footer-links">
+
+                
+
+                 <div class="hero-buttons">
+                    
+                    <a href="https://www.google.com" class="btn btn-secondary" title="NETWORKS">NETWORKS</a>
+                </div>
+
+    <div class="social-links">
+                     <a href="https://m.facebook.com" title="Facebook"><box-icon type='logo' name='facebook-circle'></box-icon></a>
+                    <a href="https://wwww.Instagram.com" title="Instagram"><box-icon type='logo' name='instagram'></box-icon></a>
+                    <a href="https://www.linkedin.com" title="linkedin"><box-icon type='logo' name='linkedin-square'></box-icon></a>
+                    <a href="https://www.whatsapp.com" title="whatsapp"><box-icon type='logo' name='whatsapp'></box-icon></a>
+                    <a href="https://outlook.com" title="outlook"><box-icon type='logo' name='windows'></box-icon></a>
+                    <a href="https://mail.google.com" title="email"><box-icon name='google-plus' type='logo' ></box-icon></a>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 tanjona-tokiniaina. All rights reserved. | Designed for the future.<br>rasolofonirainytokiniaina@gmail.com <br>rasolofonirainytokiniaina@outlook.fr</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
         
-        <div class="logo">
-            <h1>mode de payement</h1>
-            <img src="./MVOLA.png" alt="">
-             <img src="./images orange.png" alt="">
-        </div>
-    
-   
-        <div class="card1">
- <img src="./vitrophanie-CB-1.jpg" alt="">
-        </div>
+        // Menu mobile toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
-    </header>
-    
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Three.js Scene
+        let scene, camera, renderer, particles;
+
+        function initThree() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({
+                canvas: document.getElementById('three-canvas'),
+                alpha: true
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Create particles
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 1000;
+            const posArray = new Float32Array(particlesCount * 3);
+
+            for (let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 10;
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.005,
+                color: 0x40E0D0,
+                transparent: true,
+                opacity: 0.8
+            });
+
+            particles = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particles);
+
+            // Add floating geometric shapes
+            const shapes = [];
+            for (let i = 0; i < 20; i++) {
+                const geometry = Math.random() > 0.5 
+                    ? new THREE.BoxGeometry(0.1, 0.1, 0.1)
+                    : new THREE.SphereGeometry(0.05, 8, 8);
+                
+                const material = new THREE.MeshBasicMaterial({
+                    color: Math.random() > 0.5 ? 0x40E0D0 : 0x4a2c7a,
+                    transparent: true,
+                    opacity: 0.6
+                });
+                
+                const shape = new THREE.Mesh(geometry, material);
+                shape.position.set(
+                    (Math.random() - 0.5) * 10,
+                    (Math.random() - 0.5) * 10,
+                    (Math.random() - 0.5) * 10
+                );
+                
+                shapes.push(shape);
+                scene.add(shape);
+            }
+
+            camera.position.z = 5;
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Rotate particles
+                particles.rotation.x += 0.0005;
+                particles.rotation.y += 0.0005;
+
+                // Animate shapes
+                shapes.forEach((shape, index) => {
+                    shape.rotation.x += 0.01;
+                    shape.rotation.y += 0.01;
+                    shape.position.y += Math.sin(Date.now() * 0.001 + index) * 0.0005;
+                });
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        }
+
+        // Initialize Three.js when page loads
+        window.addEventListener('load', initThree);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (camera && renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after click
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Portfolio cards hover effect
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) rotateX(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0deg)';
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
