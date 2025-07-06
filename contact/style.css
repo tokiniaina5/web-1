@@ -1,26 +1,48 @@
  
+      @import url('https://fonts.googleapis.com/css?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins','sans-serif';
+    text-decoration: none;
+border: none;
+outline: none;
+
+}  
     body {
-      font-family: Arial, sans-serif;
       background:url(./images.jpeg);
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+     
     }
   
     h1 {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
       margin-bottom: 20px;
-      color: #00796b;
+      color:whitesmoke;
       text-align: center;
+      font-size: 50px;
     }
     input {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
-      border: 1px solid #ccc;
+      border: 3px solid #910f0fc0;
       border-radius: 5px;
-      align-items: center;
+      background: none;
+     transition: 0.3;
     }
+  input:hover{
+    background-color: #4facfe;
+  }
+
+ 
+  .message{
+    padding: 50px;
+    
+  }
+
     button {
       width: 100%;
       padding: 10px;
@@ -31,17 +53,20 @@
       cursor: pointer;
     }
     button:hover {
-      background: #004d40;
+      background:blue;
     }
 
     /*maps*/
     #map{
+    
       background: red;
-     text-align: center;
-      height: 50%;
-      width: 50%;
+
+    height:100px;
+      width: 30%;
       font-size: 3rem;
       border-radius: 5px;
+      text-align: center;
+      justify-items: center;
    
 
     }
@@ -61,9 +86,10 @@ color: #0a0a0a;
     
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+       
+           background: #004d40;
             padding: 4rem 0 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.849);
         }
 
         .footer-content {
