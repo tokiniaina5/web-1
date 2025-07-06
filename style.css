@@ -252,37 +252,6 @@ outline: none;
             overflow: hidden;
         }
 
-
-        /* Social Links */
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            opacity: 0;
-            animation: slideInLeft 1s ease-out 1.3s forwards;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            border: 2px solid brown;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color:pink;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background:pink;
-            color: #1a0033;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.3);
-        }
-
         /* Three.js Canvas */
         #three-canvas {
             position: fixed;
@@ -394,7 +363,7 @@ outline: none;
             color: #40E0D0;
             text-decoration: none;
             transition: all 0.3s;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         
         }
 
@@ -504,7 +473,39 @@ outline: none;
                 font-size: 0.9rem;
             }
         }
+
         /* Footer */
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease-out 1.3s forwards;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border: 2px solid brown;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:pink;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background:pink;
+            color: #1a0033;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.3);
+        }
+
         footer {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             padding: 4rem 0 2rem;
