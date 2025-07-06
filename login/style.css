@@ -1,9 +1,17 @@
+      @import url('https://fonts.googleapis.com/css?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins','sans-serif';
+    text-decoration: none;
+border: none;
+outline: none;
+
+}  
+
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,7 +24,7 @@
             position: relative;
         }
 
-       /* /* Animated background elements */
+        /* Animated background elements */
         .bg-animation {
             position: absolute;
             top: 0;
@@ -32,7 +40,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
-        }*/
+        }
 
         .shape1 {
             width: 80px;
@@ -243,6 +251,13 @@
             transform: translateY(0);
         }
 
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
         .divider::before {
             content: '';
             position: absolute;
@@ -263,12 +278,7 @@
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
-            
         }
-         .social-login a{
-            text-decoration: none;
-         }
-
 
         .social-btn {
             flex: 1;
@@ -281,7 +291,6 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-          
         }
 
         .social-btn:hover {
