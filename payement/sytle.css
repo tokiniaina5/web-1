@@ -1,16 +1,99 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-body{
-    background: red;
-}
-.bar{
-width: 0;
-top: 0;
-}
-.bar h1{
-    color: blue;
-    width: 24px;
+@import url('https://fonts.googleapis.com/css?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins','sans-serif';
+
+}
+
+body{
+    background-color:rgba(153, 205, 50, 0.856);
+   padding: 0;
+   margin: 0;
+}
+
+header{
+    padding: 20px 8%;
+
+}
+section{
+    padding: 70px 8%;
+}
+header{
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo{
+    font-weight: bold;/* text en gras*/
+
+    
+}
+.logo.img{
+
+  width: 30%;
+
+     font-size: 20px;
+    }
+  
+
+
+.logo span{
+    color:green;
+}
+.logo p{
+    color: rgb(49, 49, 56);
+}
+ul{ /*fanalana ilay point*/
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    list-style: none;
+    
+}
+ul li{
+    padding: 10px 25px;
+}
+ul li a{ /*manala ilay souligner*/
+    text-decoration: none;/* souligner*/
+    color: green;
+    transition: 0.5s;
+    font-size: 14px;
+}
+ul li a:hover{
+    background-color: yellowgreen;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+
+}
+.btn header{
+    width: 30%;
+    display: flex;
+    justify-content: end;
+}
+.btn{
+    color: black;
+    background-color:yellow ;
+    border: 2px solid pink;
+    padding: 15px 30px ;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 30px rgba(red, green, blue, alpha);
+    transition: 0.5 s;
+    left: 100%;
+
+}
+.btn:hover{
+    background-color: aqua;
+    transform: rotate(5deg);
+}
+.btn i{
+    margin-right: 5px;
 }
