@@ -45,7 +45,7 @@ header{
     color: rgb(49, 49, 56);
 }
 ul{ /*fanalana ilay point*/
-    display: flex;
+    display:flex;
     justify-content: center;
     width: 40%;
     list-style: none;
