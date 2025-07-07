@@ -12,7 +12,7 @@ outline: none;
         
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a0033, #2d1b4e, #4a2c7a);
+            background: linear-gradient(135deg, #1a0033b4, #2d1b4e, #4a2c7a);
             color: white;
             overflow-x: hidden;
         }
@@ -25,7 +25,7 @@ outline: none;
             width: 100%;
             z-index: 1000;
             padding: 1rem 2rem;
-            background: rgba(205, 198, 212, 0);
+            background: rgba(205, 198, 212, 0.24);
            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(64, 224, 208, 0.3);
         }
@@ -193,7 +193,7 @@ outline: none;
 
         .btn-secondary:hover {
             background: greenyellow;
-            color: #1a0033;
+            color: red;
             transform: translateY(-2px);
         }
 
@@ -296,7 +296,7 @@ outline: none;
         /* Portfolio Section */
         .portfolio {
             padding: 4rem 2rem;
-            background: rgba(51, 0, 24, 0.9);
+            background: linear-gradient(135deg, rgba(225, 225, 231, 0.123) 0%, rgba(255, 255, 255, 0.226) 100%);
         }
 
         .portfolio-container {
@@ -308,7 +308,7 @@ outline: none;
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color:rebeccapurple;
+            color:white;
         }
 
         .portfolio-grid {
