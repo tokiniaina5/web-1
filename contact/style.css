@@ -13,7 +13,7 @@ outline: none;
 
 }  
     body {
-      background:url(./images.jpeg);
+      background: linear-gradient(135deg, #1a0033b4, #2d1b4e, #4a2c7a);
      
     }
   
@@ -79,12 +79,34 @@ outline: none;
     }
     #map a:hover{
 color: #0a0a0a;
+}
 
 
-    }
+       .footer-content .footer-links  a{
+           font-size: 2rem;
+            color: #ffffff;
+            text-decoration: none;
+             justify-content: center;
+             text-align: center;
+            position: relative;
+             background:blueviolet;
+            border-radius: 25px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
 
-    
-        /* Footer */
+         }
+
+
+       .footer-content .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+           
+        }
+
+   /* Footer */
         footer {
        
            background: #004d40;
