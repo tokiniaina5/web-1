@@ -545,11 +545,15 @@ outline: none;
             flex-wrap: wrap;
         }
 
-
         .footer-bottom {
             padding-top: 2rem;
-            border-top: 3px solid rgba(255, 255, 0, 0.247);
+            border-top: 3px solid rgba(255, 255, 0, 0.26);
             opacity: 0.5;
+        }
+
+          .footer-bottom p {
+          color: azure;
+          font-size: 1.0rem;
         }
 
         /* Animations */
