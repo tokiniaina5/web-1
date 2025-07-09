@@ -14,7 +14,7 @@ outline: none;
         
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a0033, #2d1b4e, #4a2c7a);
+            background: linear-gradient(135deg, #1a003354, #2d1b4e, #4a2c7a50);
             color: white;
             overflow-x: hidden;
         }
@@ -67,7 +67,7 @@ outline: none;
         /* Portfolio Section */
         .portfolio {
             padding: 4rem 2rem;
-            background: rgba(51, 0, 24, 0.9);
+            background: rgba(51, 0, 24, 0.185);
         }
 
         .portfolio-container {
@@ -77,9 +77,9 @@ outline: none;
 
         .portfolio h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 3rem;
-            color:rebeccapurple;
+            color:white;
         }
 
         .portfolio-grid {
@@ -106,7 +106,8 @@ outline: none;
         .portfolio-card h3 {
             color: #40E0D0;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
+            text-align: center;
         }
 
         .portfolio-card p {
@@ -251,7 +252,7 @@ outline: none;
              justify-content: center;
              text-align: center;
             position: relative;
-             background:greenyellow;
+             background:rgba(172, 255, 47, 0.226);
             border-radius: 25px;
             padding: 2rem;
             position: relative;
@@ -301,7 +302,7 @@ outline: none;
         }
 
         footer {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.589) 0%, rgba(255, 255, 255, 0.13) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.062) 0%, rgba(255, 255, 255, 0.103) 100%);
             padding: 4rem 0 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
