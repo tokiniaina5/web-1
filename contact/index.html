@@ -77,48 +77,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <h1>contact Us</h1>
+  
 
 
-   
- <div class="input">
+<div class="form-container">
+            <div class="form-header">
+             
+                <h2>Contact Us</h2>
+            </div>
 
-    
-</div>
- <form action="https://formsubmit.co/rasolofonirainytokiniaina@gmail.com" method="POST">
-     <input type="hidden" name="_next" value="https://tokiniaina-tanjona.netlify.app">
-   
+        
+
+              <form action="https://formsubmit.co/rasolofonirainytokiniaina@gmail.com" method="POST" id="contactForm">
+                    <!-- Configuration FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nouvelle demande de devis - Developpement web">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://tokiniaina-tanjona.netlify.app">
+                    <input type="text" name="_honey" style="display: none">
+                <div class="form-grid">
+
+
      <input type="hidden" name="_subject" value="New submission!">
      <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
      <input type="hidden" name="_captcha" value="false">
      <input type="hidden" name="_autoresponse" value="your custom message">
-
-     <div class="message">
-           <input type="text" name="name" placeholder="name" title="name">
-      <input type="tel" id="phone" placeholder=" phone number" required title="phone number">
-     <input type="email" name="email" placeholder="Email Address"title="email adress">
-       
-     </div>
-      
- <input type="text" name="name" placeholder="message..." title="message">
+         <input type="hidden" name="_autoresponse" value="your custom message">
+      <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+ <input type="hidden" name="_cc" value="rasolofonirainytokiniaina@gmail.com">
 
  <input type="hidden" name="_cc" value="rasolofonirainytokiniaina@gmail.com,https://tokiniaina-tanjona.netlify.app">
 
- <input type="hidden" name="_cc" value="rasolofonirainytokiniaina@gmail.com">
-    
-     <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
-     <input type="hidden" name="_captcha" value="false">
-  
+     <input type="hidden" name="_cc" value="rasolofonirainytokiniaina@gmail.com">
 
-     <button type="submit">Send</button>
-</form>
+                    <!-- Section Informations de contact -->
+                    <div class="form-section fade-in">
+                        <h3><span class="icon">👤</span>  informations</h3>
+                        
+                        <div class="form-group">
+                            <label for="nom">name <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">phone number</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entreprise">message</label>
+                            <input type="text" id="entreprise" name="entreprise">
+                        </div>
 
 
-<div id="map">
-<a href="https://www.google.com/maps/@-18.8779274,47.5373642,2912m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">house</a>
-</div>
+                <div class="submit-section">
+                
+                    <button type="submit" class="btn-submit">
+                        send
+                    </button>
+                   
+                </div>
 
-    
+                    </div>
+      
+
+            </form>
+        </div>
+
+
+<div class="contact-info">
+            <h3>Vous préférez nous contacter directement ?</h3>
+         
+            <div class="contact-methods">
+                <div class="contact-method">
+                 <a href="https://www.google.com/maps/@-18.8779274,47.5373642,2912m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">house</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
      <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
@@ -131,6 +173,236 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </footer>
-   
+
+    <script>
+        // Animation d'entrée
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.form-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Validation et soumission du formulaire
+        document.getElementById('devisForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Vérification des champs requis
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#e53e3e';
+                    field.style.boxShadow = '0 0 0 3px rgba(229, 62, 62, 0.1)';
+                } else {
+                    field.style.borderColor = '#e2e8f0';
+                    field.style.boxShadow = 'none';
+                }
+            });
+
+            // Vérification des services sélectionnés
+            const services = this.querySelectorAll('input[name="services[]"]:checked');
+            if (services.length === 0) {
+                isValid = false;
+                alert('Veuillez sélectionner au moins un service.');
+                document.querySelector('input[name="services[]"]').closest('.form-group').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                return;
+            }
+
+            if (isValid) {
+                // Animation de soumission
+                const submitBtn = this.querySelector('.btn-submit');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = '⏳ Envoi en cours...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                
+                // Simulation d'envoi (remplacez par votre logique d'envoi)
+                setTimeout(() => {
+                    // Affichage du message de succès
+                    showSuccessMessage();
+                    
+                    // Reset du formulaire
+                    this.reset();
+                    
+                    // Restauration du bouton
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }, 2000);
+            } else {
+                // Scroll vers le premier champ invalide
+                const firstInvalid = this.querySelector('input[style*="border-color: rgb(229, 62, 62)"]');
+                if (firstInvalid) {
+                    firstInvalid.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            }
+        });
+// Message de succès
+        function showSuccessMessage() {
+            const successMessage = document.createElement('div');
+            successMessage.innerHTML = `
+               
+                  
+                   
+                    
+            `;
+            document.body.appendChild(successMessage);
+        }
+
+        // Animation des éléments au focus
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.closest('.form-group').style.transform = 'translateY(-2px)';
+                this.closest('.form-section').style.boxShadow = '0 20px 40px rgba(0,0,0,0.12)';
+            });
+            
+            element.addEventListener('blur', function() {
+                this.closest('.form-group').style.transform = 'translateY(0)';
+                this.closest('.form-section').style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Animation des checkbox et radio
+        document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.checked) {
+                    this.closest('.checkbox-item, .budget-option, .timeline-option').style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.closest('.checkbox-item, .budget-option, .timeline-option').style.transform = 'scale(1)';
+                    }, 200);
+                }
+            });
+        });
+
+// Effet de parallaxe subtil
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header');
+            const formContainer = document.querySelector('.form-container');
+            
+            header.style.transform = `translateY(${scrolled * 0.2}px)`;
+            formContainer.style.transform = `translateY(${scrolled * 0.05}px)`;
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // Indicateur de progression du formulaire
+        function updateProgress() {
+            const requiredFields = document.querySelectorAll('[required]');
+            const filledFields = Array.from(requiredFields).filter(field => {
+                if (field.type === 'checkbox' || field.type === 'radio') {
+                    return document.querySelector(`input[name="${field.name}"]:checked`);
+                }
+                return field.value.trim() !== '';
+            });
+            
+            const progress = (filledFields.length / requiredFields.length) * 100;
+            
+        }
+
+        // Écoute des changements pour la progression
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('input', updateProgress);
+            element.addEventListener('change', updateProgress);
+        });
+
+        // Animation de typing pour le placeholder
+        const textarea = document.getElementById('description');
+        const placeholders = [
+            "Décrivez votre vision du projet...",
+            "Quels sont vos objectifs ?",
+            "Qui est votre public cible ?",
+            "Avez-vous des références visuelles ?"
+        ];
+        
+        let placeholderIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typePlaceholder() {
+            const currentPlaceholder = placeholders[placeholderIndex];
+            
+            if (isDeleting) {
+                textarea.placeholder = currentPlaceholder.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textarea.placeholder = currentPlaceholder.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentPlaceholder.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                placeholderIndex = (placeholderIndex + 1) % placeholders.length;
+            }
+            
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(typePlaceholder, speed);
+        }
+        
+        // Démarrer l'animation seulement si le textarea n'est pas focus
+        textarea.addEventListener('focus', () => {
+            textarea.placeholder = "Parlez-nous de votre vision, vos objectifs, votre public cible, vos inspirations...";
+        });
+        
+        textarea.addEventListener('blur', () => {
+            if (!textarea.value) {
+                setTimeout(typePlaceholder, 1000);
+            }
+        });
+        
+        // Démarrer l'animation
+        if (!textarea.value) {
+            setTimeout(typePlaceholder, 2000);
+        }
+
+// Effet de survol pour les cartes
+        document.querySelectorAll('.form-section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Initialisation
+        updateProgress();
+    </script>
+
 </body>
 </html>
