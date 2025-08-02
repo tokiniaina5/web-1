@@ -8,8 +8,8 @@
 border: none;
 outline: none;
 
-}  
-        
+}
+    
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #1a0033b4, #2d1b4e, #4a2c7a);
@@ -601,4 +601,18 @@ outline: none;
             .features-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .bee-model {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 1s ease-out;
         }
