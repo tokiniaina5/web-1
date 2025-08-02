@@ -606,12 +606,12 @@ outline: none;
         .bee-model {
             position: fixed;
             top: 0;
-            left: 0;
-            z-index: -1;
+            left: 50%;
+            z-index: 100;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            width: 100%;
+            width: 50%;
             height: 100%;
             overflow: hidden;
             transition: transform 1s ease-out;
