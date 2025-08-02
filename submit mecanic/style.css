@@ -5,6 +5,20 @@
             box-sizing: border-box;
         }
 
+        .bee-model {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 100;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 1s ease-out;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
