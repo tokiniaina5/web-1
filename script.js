@@ -136,4 +136,8 @@
                 heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
         });
+
+
+      
+
   
