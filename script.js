@@ -139,5 +139,147 @@
 
 
       
+        class NatureSlideshow {
+            constructor() {
+                this.currentSlide = 0;
+                this.slides = document.querySelectorAll('.slide');
+                this.thumbnails = document.querySelectorAll('.thumbnail');
+                this.totalSlides = this.slides.length;
+                this.isPlaying = true;
+                this.slideInterval = null;
+                this.slideDuration = 5000; // 5 seconds per slide
+                this.startTime = Date.now();
+                this.totalDuration = 15 * 60 + 17; // 15:17 in seconds
+                
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.startSlideshow();
+                this.updateTimer();
+                this.updateProgressBar();
+            }
+
+            setupEventListeners() {
+                // Navigation controls
+                document.getElementById('prevBtn').addEventListener('click', () => this.previousSlide());
+                document.getElementById('nextBtn').addEventListener('click', () => this.nextSlide());
+                
+                // Play/Pause control
+                document.getElementById('playBtn').addEventListener('click', () => this.togglePlayPause());
+                
+                // Thumbnail clicks
+                this.thumbnails.forEach((thumb, index) => {
+                    thumb.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                // Media controls (decorative)
+                document.getElementById('muteBtn').addEventListener('click', (e) => {
+                    const btn = e.target;
+                    btn.textContent = btn.textContent === '🔇' ? '🔊' : '🔇';
+                });
+
+                document.getElementById('ccBtn').addEventListener('click', (e) => {
+                    e.target.style.opacity = e.target.style.opacity === '0.5' ? '1' : '0.5';
+                });
+            }
+
+            showSlide(index) {
+                // Hide all slides
+                this.slides.forEach(slide => slide.classList.remove('active'));
+                this.thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                
+                // Show current slide
+                this.slides[index].classList.add('active');
+                this.thumbnails[index].classList.add('active');
+                
+                this.currentSlide = index;
+            }
+
+            nextSlide() {
+                const next = (this.currentSlide + 1) % this.totalSlides;
+                this.showSlide(next);
+            }
+
+            previousSlide() {
+                const prev = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.showSlide(prev);
+            }
+
+            goToSlide(index) {
+                this.showSlide(index);
+            }
+
+            startSlideshow() {
+                if (this.slideInterval) {
+                    clearInterval(this.slideInterval);
+                }
+                
+                this.slideInterval = setInterval(() => {
+                    if (this.isPlaying) {
+                        this.nextSlide();
+                    }
+                }, this.slideDuration);
+            }
+
+            togglePlayPause() {
+                const playBtn = document.getElementById('playBtn');
+                
+                if (this.isPlaying) {
+                    this.isPlaying = false;
+                    playBtn.textContent = '▶️';
+                    clearInterval(this.slideInterval);
+                } else {
+                    this.isPlaying = true;
+                    playBtn.textContent = '⏸️';
+                    this.startSlideshow();
+                }
+            }
+
+            updateTimer() {
+                setInterval(() => {
+                    const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
+                    const remaining = Math.max(0, this.totalDuration - elapsed);
+                    
+                    const minutes = Math.floor(remaining / 60);
+                    const seconds = remaining % 60;
+                    
+                    document.getElementById('timer').textContent = 
+                        `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+
+            updateProgressBar() {
+                setInterval(() => {
+                    const elapsed = (Date.now() - this.startTime) / 1000;
+                    const progress = Math.min(100, (elapsed / this.totalDuration) * 100);
+                    
+                    document.getElementById('progressBar').style.width = `${progress}%`;
+                }, 100);
+            }
+        }
+
+        // Initialize slideshow when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new NatureSlideshow();
+        });
+
+        // Add some interactive hover effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.slideshow-container');
+            
+            container.addEventListener('mouseenter', () => {
+                document.querySelectorAll('.control-btn, .media-btn').forEach(btn => {
+                    btn.style.opacity = '1';
+                });
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                document.querySelectorAll('.control-btn, .media-btn').forEach(btn => {
+                    btn.style.opacity = '0.7';
+                });
+            });
+        });
 
   
