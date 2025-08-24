@@ -128,14 +128,7 @@
             });
         });
 
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroImage = document.querySelector('.hero-image');
-            if (heroImage) {
-                heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
+        
 
 
       
