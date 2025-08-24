@@ -395,10 +395,13 @@ outline: none;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(26, 0, 51, 0.95);
+                  background: linear-gradient(135deg, rgba(10, 10, 235, 0.993) 0%, rgba(49, 6, 6, 0.986) 100%);
                 flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
+                padding: 5rem;
+                gap: 6rem;
+                text-align: center;
+                font-size:30px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
 
             .nav-links.active {
@@ -423,17 +426,7 @@ outline: none;
                 font-size: 1.8rem;
             }
 
-            .image-container {
-                width: 300px;
-                height: 400px;
-            }
-
-            .profile-image {
-                width: 250px;
-                height: 320px;
-            }
-          
-
+           
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
