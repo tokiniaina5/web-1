@@ -1,5 +1,4 @@
 
-        
         // Menu mobile toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -128,11 +127,18 @@
             });
         });
 
-        
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
 
+        //image fond
 
-      
-        class NatureSlideshow {
+         class NatureSlideshow {
             constructor() {
                 this.currentSlide = 0;
                 this.slides = document.querySelectorAll('.slide');
@@ -274,5 +280,4 @@
                 });
             });
         });
-
-  
+   
