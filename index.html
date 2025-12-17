@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOKINIAINA TANJONA</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-        <link rel="shortcut icon" href="./logos.jpeg">
+    <title>TANJONA</title>
+<link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./logos.jpeg">
          <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
          
  
@@ -67,244 +65,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gtag('config', '	GTM-TF7KT89H');
   </script>
 
-
 </head>
 <body>
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNNSL7R5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <canvas id="three-canvas"></canvas> 
- 
-    <nav>
+    <header>
+        
+    
 
+          <div class="search-box">  <a href="/PORTFOLIO/index.html"> click<box-icon name='donate-heart' type='solid' ></box-icon> 
+            <input type="text" placeholder="MY PORTFOLIO" > 
+          
+        </div>
       
-
-        <div class="nav-container">
-            <div class="logo"><a href="#home">TANJONA</a>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="https://fr.shein.com" title="online"><box-icon name='home-alt-2'></box-icon> sell</a></li>
-                <li><a href="https://www.hostinger.com/fr" title=" online"><box-icon name='export'></box-icon> website </a></li>
-             
-                <li><a href="travel madagascar/index.html" title="project"><box-icon name='slideshow'></box-icon> project</a></li>
-                <li><a href="contact/index.html" title="contact"><box-icon name='contact' type='solid' ></box-icon> contact</a></li>
-                <li><a href="login/index.html" title="folder"><box-icon name='folder-open'></box-icon> folder</a></li>
-            </ul>
-             <button class="menu-toggle" id="menuToggle">☰</button>
-        </div>
-
-    </nav>
-
-<model-viewer src="stylized_flying_bee_bird_rigged.glb" id="bee-model"class="bee-model" camera-orbit="50deg 120deg" autoplay></model-viewer>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-           
-    <div class="slideshow-container">
-        <!-- Slides -->
-        <div class="slide active" style="background-image: url(./ta.png)">
-        </div>
-
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-           
-        </div>
-
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1464822759844-d150f9b2c45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')" autoplay>
-            
-        </div>
-
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
-           
-        </div>
-
-        <!-- Thumbnails -->
-        <div class="thumbnails">
-            <div class="thumbnail active" data-slide="0" style="background-image: url(./ta.png)"></div>
-
-            <div class="thumbnail" data-slide="1" style="background-image: url('https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80')"></div>
-
-            <div class="thumbnail" data-slide="2" style="background-image: url('https://images.unsplash.com/photo-1464822759844-d150f9b2c45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80')"></div>
-            
-            <div class="thumbnail" data-slide="3" style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80')"></div>
-
-
-
-        </div>
-
-        <!-- Controls -->
-        <div class="controls">
-            <button class="control-btn" id="prevBtn">‹</button>
-            <button class="control-btn" id="nextBtn">›</button>
-        </div>
-
-        <!-- Media Controls -->
-        <div class="media-controls">
-            <button class="media-btn" id="muteBtn">🔇</button>
-            <button class="media-btn" id="ccBtn">CC</button>
-            <button class="media-btn" id="playBtn">⏸️</button>
-        </div>
-
-        <!-- Timer -->
-        <div class="timer" id="timer">15:17</div>
-
-        <!-- Progress Bar -->
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
-
-            <div class="hero-text">
-                <h1>Hi, I'm RASOLOFONIRAINY Tokiniaina Tanjona</h1>
-                <span class="highlight"> Frontend 
-                        <div class="form-group">
-                            
-                            <select id="secteur" name="secteur">
-                                <option value="selection ">Selection here</option>
-                                <option value="website" > website development</option>
-                                <option value="web">web Design</option>
-                                <option value="animation">animation 3D</option>
-                                <option value="micro">microcontrolor</option>
-                                <option value="car">auto mechanic</option>
-                                
-                            </select>
-
-                        </div>
-
-                            </span>
-                <p> Hello!, My name is RASOLOFONIRAINY Tokiniaina Tanjona. I have  experience with of the website, I make a microcontrolor and I have a degree about mechanic. If you are interested in it, don't hesitate to visite my website</p>
-                
-                <div class="contact-info">
-                    <div>
-                        <strong>Email:</strong><br>
-                        rasolofonirainytokiniaina@gmail.com
-                    </div>
-                    <div>
-                        <strong>outlook:</strong><br>
-                        rasolofonirainytokiniaina@outlook.fr
-                    </div>
-
-                      <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">LOOK AT CV</a>
-                    <a href="contact/index.html" class="btn btn-secondary">CALL ME!</a>
-                </div>
-                </div>
-         </div>
-  </div>
-
-    </section>
- 
-
- <section class="portfolio" id="portfolio">
-
-        <div class="portfolio-container">
-            <h2>My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3> WEBSITE DEVELOPMENT</h3>
-                    <p>A modern e-commerce application with shopping cart, integrated payment and intuitive user interface.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JAVASCRIPT</span>
-                        <span class="tech-tag">REACT.JS</span>
-                           <span class="tech-tag">JAVASCRIPT</span>
-                            <span class="tech-tag">NODE.JS</span>
-                             <span class="tech-tag">BOOTSTRAP</span>
-                             <a href="submit web develop/index.html">to ask advice </a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3> WEB DESIGN</h3>
-                    <p>Le web design, ou design web, englobe la conception visuelle et fonctionnelle d'un site web.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">BOOTSTRAP</span>
-                        <span class="tech-tag">CANVA</span>
-                        <span class="tech-tag">NETLIFY</span>
-                           <span class="tech-tag">JAVASCRIPT</span>
-                           <a href="submit web design/index.html">to ask advice</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3> 3D ANIMATION </h3>
-                    <p>Modern showcase website for a business with 3D animations, responsive design and SEO optimization.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">Three.js</span>
-                        <span class="tech-tag">TAILWIND CSS</span>
-                           <span class="tech-tag">NODE JS</span>
-   
-      <span class="tech-tag">SKETCHFAB</span>
-      <span class="tech-tag">NPM</span>
-      <a href="submit 3d/index.html">to ask advice</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3>MICROCONTROLLOR</h3>
-                    <p>a microcontrolor is an active electronic component (i.e requiring an external power supply) that allows digital inforamation processing to be carried out in an embedded manner.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">PIC 16F877A</span>
-                        <span class="tech-tag">PICK 3 v3.10</span>
-                        <span class="tech-tag">ARDUINO</span>
-                        <span class="tech-tag">Easy EDA Pro</span>
-                        <a href="submit micro/index.html">to ask advice</a>
-                    </div>
-                </div>
-
-                  <div class="portfolio-card">
-                    <h3>AUTO MECHANICS</h3>
-                    <p>Auto mechanics is the science and skill of repairing, maintaining, and understanding how vehicles work.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">ENGINE</span>
-                        <span class="tech-tag">TRANSMISSION</span>
-                        <span class="tech-tag">BRAKES</span>
-                        <span class="tech-tag">SUSPENSION</span>
-                         <span class="tech-tag">COOLING SYSTEM</span>
-                          <span class="tech-tag">LUBRIFICATION SYSTEM</span>
-                          <a href="submit mecanic/index.html">to ask advice</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-     <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-                <a href="#home">Home</a>
-            <div class="footer-links">
-                 <div class="hero-buttons">
-                    
-                    <a href="https://www.google.com" class="btn btn-secondary" title="NETWORKS">NETWORKS</a>
-                </div>
-
-    <div class="social-links">
-                     <a href="https://www.facebook.com/profile.php?id=61578620611081" title="Facebook"><box-icon type='logo' name='facebook-circle'></box-icon></a>
+        
+            <a href="/PORTFOLIO/index.html" title="online"><a href="https://www.facebook.com/profile.php?id=61578620611081" title="Facebook"><box-icon type='logo' name='facebook-circle'></box-icon></a>
                     <a href="https://web.telegram.org/a/#7024459022" title="telegram"><box-icon type='logo' name='telegram'></box-icon></a>
                     <a href="https://www.linkedin.com/in/tokiniaina-tanjona-043243357/?originalSubdomain=mg" title="linkedin"><box-icon type='logo' name='linkedin-square'></box-icon></a>
-                  
-                    <a href="mailto:rasolofonirainytokiniaina@outlook.fr" title="outlook"><box-icon type='logo' name='windows'></box-icon></a>
-                    <a href="mailto:rasolofonirainytokiniaina@gmail.com" title="email"><box-icon type='logo' name='gmail'></box-icon></a>
-                </div>
+                    
+                   
+          
+        </div>
+    </header>
+    <model-viewer src="stylized_flying_bee_bird_rigged.glb" id="bee-model"class="bee-model" camera-orbit="50deg 120deg" autoplay></model-viewer>
 
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 tanjona-tokiniaina. All rights reserved. | Designed for the future.<br>rasolofonirainytokiniaina@gmail.com <br>rasolofonirainytokiniaina@outlook.fr</p>
+    <section class="hero">
+        <div class="hero-image">
+            <div class="login-card">
+                <img src="/tan.png" alt="">
+              
+                
+                
+            
             </div>
         </div>
-    </footer>
 
-<script src="script.mjs"></script>
-<!-- Import the component -->
+        <div class="hero-content">
+            <h1>Hi, I'm RASOLOFONIRAINY Tokiniaina Tanjona<span class="highlight"> <br> Frontend </span></h1>
+            <p>Hello!, My name is RASOLOFONIRAINY Tokiniaina Tanjona. I have  experience with of the website, I make a microcontrolor and I have a degree about mechanic. If you are interested in it, don't hesitate to visite my website</p>
+            <button class="cta-button"> 
+                
+                  
+                    <a href="/contact/index.html" title="outlook"> <box-icon name='phone-call' ></box-icon> call me <box-icon name='phone-call' ></box-icon></a>
+                  
+        </div>
+    </section>
+
+    <script src="script.mjs"></script>
+    <!-- Import the component -->
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-   </body>
+
+
+</body>
 </html>
