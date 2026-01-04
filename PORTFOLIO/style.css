@@ -754,8 +754,8 @@ outline: none;
         }
 
         .social a {
-            width: 90px;
-            height: 90px;
+            width: 65px;
+            height: 65px;
             border: 2px solid brown;
             border-radius: 10px;
             display: flex;
@@ -771,8 +771,8 @@ outline: none;
 
             .social a img {
             
-            width: 90px;
-            height: 90px;
+            width: 60px;
+            height: 60px;
          color: white;
             border-radius: 10px;
             display: flex;
