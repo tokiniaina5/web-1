@@ -120,7 +120,7 @@ outline: none;
         }
 
         .hero-content .highlight {
-            color: #0f49e7;
+            color: #a6b7ee;
         }
 
         .hero-content p {
@@ -247,7 +247,7 @@ overflow: hidden;
         }
 
         .social-links a:hover {
-            color: #1c19d1;
+            color: #9c9ca7;
         }
 
         @media (max-width: 768px) {
