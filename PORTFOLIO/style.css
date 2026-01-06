@@ -622,7 +622,7 @@ outline: none;
 
         .thumbnail:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.795);
         }
 
         .thumbnail.active {
@@ -644,8 +644,8 @@ outline: none;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.795);
+            border: 2px solid rgba(255, 255, 255, 0.815);
             color: white;
             cursor: pointer;
             display: flex;
@@ -657,8 +657,8 @@ outline: none;
         }
 
         .control-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.767);
+            border-color: rgba(255, 255, 255, 0.829);
             transform: scale(1.1);
         }
 
@@ -676,7 +676,7 @@ outline: none;
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.842);
             border: none;
             color: white;
             cursor: pointer;
@@ -712,7 +712,7 @@ outline: none;
             bottom: 0;
             left: 0;
             height: 4px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.753);
             z-index: 10;
             transition: width 0.1s linear;
         }
