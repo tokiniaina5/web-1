@@ -170,7 +170,7 @@ overflow: hidden;
 }
 
  .hero-image img:hover{
-    animation: animate 1s linear infinite;
+    animation: animate 0.5s linear infinite;
 }
 @keyframes animate{
     100%{
@@ -179,7 +179,7 @@ overflow: hidden;
 }
 
 .hero-image img:hover{
-    transform:translateY(450px);
+    transform:translateY(90px);
 }
 
         .login-card {
