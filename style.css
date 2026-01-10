@@ -12,7 +12,8 @@ outline: none;
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background:url(./to.png );
+           
             color: #fff;
         }
 
@@ -281,7 +282,7 @@ overflow: hidden;
          
             gap: 1rem;
             margin-top: 2rem;
-           background: #16213e;
+           background: rgba(165, 42, 42, 0);
             animation: slideInLeft 1s ease-out 1.3s forwards;
             
         }
@@ -321,3 +322,5 @@ overflow: hidden;
             transition: all 0.3s;
             font-size: 1.2rem;
         }
+
+        
