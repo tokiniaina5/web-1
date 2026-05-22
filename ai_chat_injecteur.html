@@ -1,0 +1,191 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{display:flex;flex-direction:column;height:600px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.chat-header{background:#111;padding:14px 18px;display:flex;align-items:center;gap:12px;border-bottom:2px solid #e02020}
+.ai-avatar{width:38px;height:38px;background:#e02020;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ai-name{color:#fff;font-size:14px;font-weight:500}
+.ai-status{color:#aaa;font-size:11px;display:flex;align-items:center;gap:4px}
+.dot{width:7px;height:7px;background:#4caf50;border-radius:50%;display:inline-block}
+.messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:var(--color-background-secondary)}
+.msg{display:flex;gap:8px;align-items:flex-end;max-width:85%}
+.msg.user{align-self:flex-end;flex-direction:row-reverse}
+.bubble{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.5}
+.msg.bot .bubble{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);border-radius:4px 14px 14px 14px}
+.msg.user .bubble{background:#e02020;color:#fff;border-radius:14px 14px 4px 14px}
+.av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.av.bot{background:#e02020}
+.av.user{background:#444;color:#ccc}
+.typing{display:flex;gap:4px;align-items:center;padding:10px 14px}
+.typing span{width:7px;height:7px;background:#aaa;border-radius:50%;animation:bounce 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.suggestions{display:flex;gap:6px;flex-wrap:wrap;padding:10px 16px;border-top:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
+.sugg-btn{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--color-text-secondary);cursor:pointer;white-space:nowrap}
+.sugg-btn:hover{border-color:#e02020;color:#e02020}
+.input-row{display:flex;gap:8px;padding:12px 16px;border-top:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);align-items:center}
+.input-row input{flex:1;border:0.5px solid var(--color-border-secondary);border-radius:22px;padding:9px 16px;font-size:13px;background:var(--color-background-secondary);color:var(--color-text-primary);outline:none}
+.input-row input:focus{border-color:#e02020}
+.send-btn{width:36px;height:36px;background:#e02020;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.time{font-size:10px;color:var(--color-text-tertiary);margin:0 4px 2px}
+.msg.user .time{text-align:right}
+</style>
+
+<h2 style="position:absolute;left:-9999px">Assistant AI </h2>
+
+<div class="wrap">
+  <div class="chat-header">
+    <div class="ai-avatar">
+      <i class="ti ti-robot" style="font-size:18px;color:rgb(146, 8, 8)" aria-hidden="true"></i>
+    </div>
+    <div>
+      <div class="ai-name"> Assistant </div>
+      <div class="ai-status"><span class="dot"></span> En ligne — répond en quelques secondes</div>
+    </div>
+  </div>
+
+  <div class="messages" id="msgs">
+    <div class="msg bot">
+      <div class="av bot"><i class="ti ti-robot" style="font-size:13px;color:#fff" aria-hidden="true"></i></div>
+      <div>
+        <div class="bubble">Bonjour! Salama! <br>Miarahaba anao ny avy ato amin'ny <b>Info Pro D</b>. Izaho no mpanampy anao momba ny UI/UX.<br><br>Inona no azo hanampiana anao androany?</div>
+        <div class="time">09:00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="suggestions" id="suggs">
+    <button class="sugg-btn" onclick="quickAsk('ohatrinona ny manokatra website azafady tompoko ?')">website development</button>
+    <button class="sugg-btn" onclick="quickAsk('Prix injecteur Peugeot 207?')">3D animation </button>
+    <button class="sugg-btn" onclick="quickAsk('Injecteur Bosch vs Delphi, inona no tsara?')">microcontrolor</button>
+    <button class="sugg-btn" onclick="quickAsk('Manao ahoana ny fomba fanondranana?')">auto mechanic</button>
+  </div>
+
+  <div class="input-row">
+    <input type="text" id="userInput" placeholder="Soraty ny fanontanianareo..." onkeydown="if(event.key==='Enter')sendMsg()" aria-label="Fanontaniana momba injecteur"/>
+    <button class="send-btn" onclick="sendMsg()" aria-label="Mandefa hafatra">
+      <i class="ti ti-send" style="font-size:16px;color:green" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+const knowledge = {
+  toyota: {
+    models: ['Hilux','Land Cruiser','Corolla','Avensis','RAV4'],
+    refs: ['23670-30050 (Denso)','0445110283 (Bosch)'],
+    price: '380 000 – 480 000 Ar',
+    stock: true
+  },
+  peugeot: {
+    models: ['207','307','407','Partner'],
+    refs: ['28229873 (Delphi)','0445110259 (Bosch)'],
+    price: '320 000 – 420 000 Ar',
+    stock: true
+  },
+  renault: {
+    models: ['Clio','Megane','Laguna','Scenic'],
+    refs: ['0445115007 (Bosch)','28232251 (Delphi)'],
+    price: '300 000 – 390 000 Ar',
+    stock: 'commande'
+  },
+  mitsubishi: {
+    models: ['L200','Pajero','Eclipse'],
+    refs: ['1465A041 (Denso)'],
+    price: '400 000 – 500 000 Ar',
+    stock: true
+  },
+  bosch: { info: 'Injecteur Bosch Common Rail dia tsara indrindra ho an\'ny fiara moderina. Garantie 6 mois. Prix: 350 000 – 500 000 Ar.' },
+  delphi: { info: 'Delphi dia maza amin\'ny fiara Européenne (Peugeot, Renault, Ford). Tsara sy azo antoka. Prix: 300 000 – 420 000 Ar.' },
+  denso: { info: 'Denso dia maza amin\'ny Toyota sy Honda. Kalitao avo lenta, vita Japonais. Prix: 380 000 – 480 000 Ar.' },
+  prix: 'Ny prix manokatra website dia miankina amin\'ny modeliny. Amin\'ny ankapobeny: 300 000 – 1 000 000 Ar. Contactez-nous pour un devis précis.',
+  livraison: 'manao ny marika  fiara rehetra .',
+  garantie: 'Garantie 6 volana ny injecteur rehetra. Raha misy olana, asaina averina ny piece ary ovana vaovao.',
+  contact: 'Antso: +261 34 00 000 00 | Email: contact@autopieces-mg.com | WhatsApp azo ampiasaina koa.',
+  default: null
+};
+
+function getReply(msg) {
+  const m = msg.toLowerCase();
+  if (m.includes('toyota') || m.includes('hilux') || m.includes('land cruiser') || m.includes('corolla')) {
+    const d = knowledge.toyota;
+    return `Eny, misy injecteur Toyota izahay!\n\nModèles: ${d.models.join(', ')}\nRéférences: ${d.refs.join(', ')}\nPrix: ${d.price}\nStock: En stock`;
+  }
+  if (m.includes('peugeot') || m.includes('207') || m.includes('307') || m.includes('hdi')) {
+    const d = knowledge.peugeot;
+    return `Injecteur Peugeot dia misy!\n\nModèles: ${d.models.join(', ')}\nRéférences: ${d.refs.join(', ')}\nPrix: ${d.price}\nStock: En stock`;
+  }
+  if (m.includes('renault') || m.includes('clio') || m.includes('megane') || m.includes('dci')) {
+    const d = knowledge.renault;
+    return `Injecteur Renault:\n\nModèles: ${d.models.join(', ')}\nRéférences: ${d.refs.join(', ')}\nPrix: ${d.price}\nStock: Sur commande (3-5 andro)`;
+  }
+  if (m.includes('mitsubishi') || m.includes('l200') || m.includes('pajero')) {
+    const d = knowledge.mitsubishi;
+    return `Injecteur Mitsubishi:\n\nModèles: ${d.models.join(', ')}\nRéférences: ${d.refs.join(', ')}\nPrix: ${d.price}\nStock: En stock`;
+  }
+  if (m.includes('bosch') && (m.includes('delphi') || m.includes('vs') || m.includes('denso'))) {
+    return 'ireo tontolo ny electronique.';
+  }
+  if (m.includes('bosch')) return knowledge.bosch.info;
+  if (m.includes('delphi')) return knowledge.delphi.info;
+  if (m.includes('denso')) return knowledge.denso.info;
+  if (m.includes('prix') || m.includes('price') || m.includes('vidiny') || m.includes('ohatrinona')) return knowledge.prix;
+  if (m.includes('livraison') || m.includes('delivery') || m.includes('mandefa') || m.includes('fanondranana')) return knowledge.livraison;
+  if (m.includes('garantie') || m.includes('garanti')) return knowledge.garantie;
+  if (m.includes('contact') || m.includes('tel') || m.includes('phone') || m.includes('antso') || m.includes('whatsapp')) return knowledge.contact;
+  if (m.includes('salama') || m.includes('bonjour') || m.includes('hello') || m.includes('hi')) {
+    return 'Salama! Bonjour! Faly miarahaba anao. Inona no azoko anampiana anao androany? Azoko atao ny mitsinjara valin-teny momba website development, 3D animation, microcontrolor ary auto mechanic , izay voalaza ao anaty website-ko.';
+  }
+  return 'Misaotra ny fanontaniana! Ho an\'ny valin-teny marina kokoa, tsindrio ny "Contactez-nous" na antsoy mivantana: +261 34 37 058 34. Azo atao koa ny mandefa mailaka elektronika aminireo adiresy voalaza.';
+}
+
+function now() {
+  return new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+}
+
+function addMsg(text, isUser) {
+  const msgs = document.getElementById('msgs');
+  const div = document.createElement('div');
+  div.className = 'msg ' + (isUser ? 'user' : 'bot');
+  const av = `<div class="av ${isUser?'user':'bot'}">${isUser?'<i class="ti ti-user" style="font-size:13px" aria-hidden="true"></i>':'<i class="ti ti-robot" style="font-size:13px;color:#fff" aria-hidden="true"></i>'}</div>`;
+  const lines = text.replace(/\n/g,'<br>');
+  div.innerHTML = (isUser?'':av)+`<div><div class="bubble">${lines}</div><div class="time">${now()}</div></div>`+(isUser?av:'');
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('msgs');
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+  div.id = 'typing-indicator';
+  div.innerHTML = `<div class="av bot"><i class="ti ti-robot" style="font-size:13px;color:yellow" aria-hidden="true"></i></div><div class="bubble typing"><span></span><span></span><span></span></div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typing-indicator');
+  if(t) t.remove();
+}
+
+function sendMsg() {
+  const inp = document.getElementById('userInput');
+  const txt = inp.value.trim();
+  if(!txt) return;
+  inp.value = '';
+  document.getElementById('suggs').style.display = 'none';
+  addMsg(txt, true);
+  showTyping();
+  setTimeout(() => {
+    removeTyping();
+    addMsg(getReply(txt), false);
+  }, 900 + Math.random()*600);
+}
+
+function quickAsk(txt) {
+  document.getElementById('userInput').value = txt;
+  sendMsg();
+}
+</script>
