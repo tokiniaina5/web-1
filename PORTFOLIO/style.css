@@ -38,6 +38,7 @@ outline: none;
             margin: 0 auto;
         }
 
+   
         .logo a{
             font-size: 1.5rem;
             font-weight: bold;
@@ -222,6 +223,21 @@ outline: none;
         .portfolio-container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+       .portfolio-container a img{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            display: flex;
+            
+           
+            font-size: 1.5rem;
+            position: fixed;
+            left: 30px;
+            top: 700px;
+             z-index: 10000;
+            
         }
 
         .portfolio h2 {
